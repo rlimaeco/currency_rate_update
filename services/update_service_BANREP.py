@@ -91,6 +91,7 @@ class BANREP_getter(Currency_getter_interface):
             self.validate_cur(curr)
 
             if curr == 'USD':
-                self.updated_currency[curr] = trm
+                # Uses the COP as base (rate: 1)
+                self.updated_currency[curr] = 1/trm
 
         return self.updated_currency, self.log_info
